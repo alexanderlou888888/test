@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《The Booster》創作動機分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals (Cream, Taupe, Muted Teal Accent) -->
+    <!-- Application Structure Plan: 本應用採用由上至下的敘事結構，旨在引導使用者逐步深入問題核心。從提出核心問題開始，接著拆解小說的內部世界（角色與衝突），然後深入探索小說的核心主題，最後將這些元素與作者的可能動機連結起來。這種結構選擇是為了將一個複雜的文學分析問題，轉化為一個清晰、有邏輯且易於理解的互動式探索旅程，讓使用者能更好地消化資訊，而不是一次性接收所有答案。 -->
+    <!-- Visualization & Content Choices: 報告資訊 -> 小說主題分析；目標 -> 組織與探索；呈現方式 -> 互動式主題關係圖；互動 -> 點擊主題切換詳細說明；理由 -> 小說主題之間的關係是概念性而非數據性的，使用傳統圖表（如長條圖）並不合適。一個以HTML/CSS構建的互動式關係圖，能更直觀地展示各主題如何圍繞小說核心展開，並鼓勵使用者主動探索每個主題的深層含義，提升參與感。此方法取代了靜態列表，使資訊呈現更具動態性和吸引力。Library/Method -> Vanilla JS, HTML/CSS with Tailwind. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .theme-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">深入探索《The Booster》</h1>
+            <p class="text-lg text-gray-600">分析珍妮佛·索洛 (Jennifer Solow) 的創作世界與動機</p>
+        </header>
+
+        <nav class="sticky top-0 bg-gray-50/80 backdrop-blur-sm z-10 py-4 mb-12 border-b">
+            <ul class="flex justify-center space-x-4 md:space-x-8">
+                <li><a href="#question" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">核心問題</a></li>
+                <li><a href="#novel-world" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">小說世界</a></li>
+                <li><a href="#themes" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">主題探索</a></li>
+                <li><a href="#author-link" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">作者連結</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="question" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center border-b pb-4">核心問題</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-xl text-center leading-relaxed">
+                        珍妮佛·索洛為何要撰寫這本關於一位時尚、聰明卻沉迷於順手牽羊的曼哈頓女性的小說？這一切是否與作者自身的背景和經歷有深刻的關聯？
+                    </p>
+                    <p class="mt-4 text-gray-600 text-center">
+                        本分析將帶您一層層揭開小說背後的深層動機，探討作者如何透過虛構故事，映照真實世界的情感與掙扎。
+                    </p>
+                </div>
+            </section>
+
+            <section id="novel-world" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center border-b pb-4">小說的內部世界</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">要理解作者的動機，我們必須先進入小說主角的世界，理解她的渴望與矛盾。點擊下方卡片，了解更多關於主角與她所面臨的核心衝突。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">👤</span>
+                            <h3 class="text-2xl font-semibold text-gray-900">主角側寫：Jillian Siegel</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Jillian 是一位二十九歲的廣告業菁英，她擁有看似完美的生活：光鮮的事業、時尚的穿搭、帥氣的男友。然而，在這亮麗的外表下，她隱藏著一個黑暗的秘密——無法控制的偷竊衝動。她專偷高價設計師服飾，這不僅是為了物質，更是一種填補內心空虛的方式。
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-4">💥</span>
+                            <h3 class="text-2xl font-semibold text-gray-900">核心衝突：失落的庇護所</h3>
+                        </div>
+                        <p class="text-gray-700">
+                            Jillian 的行為根源於童年的創傷。她家族曾擁有的高級百貨公司 Loevner's，是她童年時的魔法王國與情感慰藉之地。當這一切因家族變故與企業併購而消失時，她失去了精神上的「家」。她的偷竊，正是一種徒勞的嘗試，企圖藉由「取回」物品，來重溫那份失落的安全感與歸屬感。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="themes" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center border-b pb-4">互動式主題探索</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">小說透過 Jillian 的故事，探討了多個深刻的現代都市主題。點擊下方的主題按鈕，查看它們如何在小說中交織，構成一個複雜而真實的人性故事。</p>
+                
+                <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+                    <button class="theme-btn active px-6 py-3 bg-white rounded-full shadow-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-300" data-theme="loss">失落與懷舊</button>
+                    <button class="theme-btn px-6 py-3 bg-white rounded-full shadow-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-300" data-theme="identity">身份認同危機</button>
+                    <button class="theme-btn px-6 py-3 bg-white rounded-full shadow-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-300" data-theme="consumerism">消費主義的虛無</button>
+                    <button class="theme-btn px-6 py-3 bg-white rounded-full shadow-md font-semibold text-gray-700 hover:bg-blue-500 hover:text-white transition-all duration-300" data-theme="addiction">成癮與心理機制</button>
+                </div>
+
+                <div id="theme-display" class="bg-white p-8 rounded-xl shadow-inner min-h-[200px] transition-all duration-500">
+                    
+                </div>
+            </section>
+
+            <section id="author-link" class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center border-b pb-4">作者的連結：經驗的投射</h2>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        雖然《The Booster》是一部虛構小說，而非作者的自傳，但其中對紐約市、時尚界和廣告業精準而細膩的描寫，強烈暗示了作者珍妮佛·索洛擁有相關的深厚背景或進行了透徹的研究。小說不像是在憑空想像，更像是在一個她極為熟悉的舞台上，上演一場精心編排的心理劇。
+                    </p>
+                    <blockquote class="border-l-4 border-blue-500 pl-6 my-6">
+                        <p class="text-lg italic text-gray-800">
+                            "作者往往將自身對世界的觀察、情感的體驗以及對人性的思考，注入筆下的人物與故事之中。"
+                        </p>
+                    </blockquote>
+                    <p class="text-gray-700 leading-relaxed">
+                        因此，我們可以推斷，索洛撰寫這部小說的目的並非記錄個人經歷，而是：
+                    </p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+                        <li><strong>探索心理深度：</strong> 透過 Jillian 這個極端案例，深入探討創傷、失落感如何扭曲一個人的行為，以及成癮行為背後的複雜心理動機。</li>
+                        <li><strong>批判現代社會：</strong> 小說對消費文化、物質主義以及人們如何用品牌來定義自我價值，提出了尖銳且帶有黑色幽默的批判。</li>
+                        <li><strong>情感的共鳴：</strong> 藉由一個關於「偷竊」的獨特故事，觸及了更為普世的情感主題——對歸屬感的渴望、對過去的懷念，以及在現代都市中尋找自我的迷惘。</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="conclusion" class="text-center">
+                 <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-4">結論</h2>
+                 <div class="bg-blue-50 p-8 rounded-xl shadow-md">
+                    <p class="text-xl text-blue-900 leading-relaxed">
+                        珍妮佛·索洛撰寫《The Booster》，是將個人對特定環境（紐約、時尚圈）的深刻洞察，與對普世人性掙扎（失落、認同）的細膩理解相結合的成果。她並非在寫「自己」，而是在寫她所觀察到的「世界」與「人心」。<br><br>
+                        <strong>這部小說是一次透過虛構稜鏡，對真實情感與社會現象所做的深刻、風趣且充滿同理心的文學探索。</strong>
+                    </p>
+                 </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            const themeDisplay = document.getElementById('theme-display');
+
+            const themeContent = {
+                loss: {
+                    title: '失落與懷舊 (Loss & Nostalgia)',
+                    text: '小說的核心驅動力是 Jillian 對過去的失落感。Loevner\'s 百貨不僅是一個地方，更是她穩定、被愛的童年的象徵。她的偷竊行為，是對這種失落的病態反應，企圖透過佔有物品來抓住逝去的時光。這反映了人們在面對巨大失落時，可能採取的非理性補償行為。'
+                },
+                identity: {
+                    title: '身份認同危機 (Identity Crisis)',
+                    text: '當家族的榮耀與庇護所消失後，Jillian 的自我認同也隨之崩解。她用偷來的名牌服飾武裝自己，試圖建立一個新的、看似堅不可摧的社會身份。這探討了在現代社會中，人們的自我價值是建立在內在，還是外在的標籤與物質之上。'
+                },
+consumerism: {
+                    title: '消費主義的虛無 (Critique of Consumerism)',
+                    text: '小說透過描寫時尚界的浮華與 Jillian 的偷竊行為，巧妙地批判了消費文化。它揭示了物質本身無法填補情感的空洞，無盡的慾望只會帶來短暫的快感與長久的空虛。Jillian 擁有的越多，她反而感覺越孤獨。'
+                },
+                addiction: {
+                    title: '成癮與心理機制 (Addiction & Psychology)',
+                    text: 'Jillian 的順手牽羊是一種行為成癮。小說精準地描寫了成癮的循環：刺激、行動、暫時的滿足，隨之而來的卻是更深的罪惡感與空虛，從而驅使下一次的行動。索洛藉此深入探討了成癮不僅是道德問題，更是複雜的心理與情感問題。'
+                }
+            };
+
+            function updateTheme(theme) {
+                const content = themeContent[theme];
+                if (content) {
+                    themeDisplay.innerHTML = `
+                        <h3 class="text-2xl font-bold text-blue-700 mb-3">${content.title}</h3>
+                        <p class="text-gray-700 leading-relaxed">${content.text}</p>
+                    `;
+                }
+            }
+
+            themeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    themeButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const theme = button.getAttribute('data-theme');
+                    updateTheme(theme);
+                });
+            });
+
+            // Initial load
+            updateTheme('loss');
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
